@@ -108,22 +108,6 @@ class BooksList(Resource):
         return BOOKS
 
     def post(self):
-        """
-               Enter book data
-               ---
-               tags:
-                 - restful
-               parameters:
-                 - in: body
-                   name: body
-                   schema:
-                     $ref: '#/definitions/Book'
-               responses:
-                 201:
-                   description: The book information has been entered
-                   schema:
-                     $ref: '#/definitions/Book'
-               """
         args = parser.parse_args()
         book_id = int(max(BOOKS.keys()).lstrip('book')) + 1
         book_id = 'book%i' % book_id
